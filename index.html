@@ -298,7 +298,7 @@
 				$('.result-message').html(resultMessage);
 				for (let i = 0; i < maxPredictions; i++) {
 					const classPrediction =
-						prediction[i].className + ': ' + prediction[i].probability.toFixed(0)*100+"%";
+						prediction[i].className + ': ' + prediction[i].probability.toFixed(2)*100+"%";
 					labelContainer.childNodes[i].innerHTML = classPrediction;
 				}
 			}
