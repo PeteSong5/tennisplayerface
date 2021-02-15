@@ -13,7 +13,10 @@
 			crossorigin="anonymous"
 		/>
 
-		<title>Hello, world!</title>
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+		<title>Tennis Player Lookalike</title>
 		<link rel="stylesheet" href="style.css" />
 
 		<!-- Go to www.addthis.com/dashboard to customize your tools -->
@@ -39,7 +42,7 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 						<li class="nav-item">
 							<a class="nav-link active" aria-current="page" href="#">Home</a>
 						</li>
@@ -78,7 +81,7 @@
 							aria-label="Search"
 						/>
 						<button class="btn btn-outline-success" type="submit">Search</button>
-					</form>
+					</form> -->
 				</div>
 			</div>
 		</nav>
@@ -124,9 +127,9 @@
 				<div class="addthis_inline_share_toolbox"></div>
 
 				<div class="image-title-wrap">
-					<button type="button" onclick="removeUpload()" class="remove-image">
+					<!-- <button type="button" onclick="removeUpload()" class="remove-image">
 						Remove <span class="image-title">Uploaded Image</span>
-					</button>
+					</button> -->
 				</div>
 			</div>
 		</div>
@@ -209,6 +212,7 @@
 				$('.image-upload-wrap').removeClass('image-dropping');
 			});
 		</script>
+		
 
 		<script type="text/javascript">
 			// More API functions here:
@@ -282,17 +286,17 @@
 				// }
 
 				if (prediction[0].className == 'Novak Djokovic') {
-					resultMessage = '당신은 조코비치!!';
+					resultMessage = '당신은 세르비아에서 온 조코비치!!';
 				} else if (prediction[0].className == 'Rafael Nadal') {
-					resultMessage = '당신은 나달!!';
+					resultMessage = '당신은 열정의 상징, 나달!!';
 				} else if (prediction[0].className == 'Roger Federer') {
-					resultMessage = '페더러!!';
-				} else resultMessage = '알 수 없음.';
+					resultMessage = '당신은 스위스의 3대 명물 중 하나인 페더러!!';
+				} else resultMessage = '알수 없음.';
 
 				$('.result-message').html(resultMessage);
 				for (let i = 0; i < maxPredictions; i++) {
 					const classPrediction =
-						prediction[i].className + ': ' + prediction[i].probability.toFixed(2);
+						prediction[i].className + ': ' + prediction[i].probability.toFixed(2)*100+"%";
 					labelContainer.childNodes[i].innerHTML = classPrediction;
 				}
 			}
