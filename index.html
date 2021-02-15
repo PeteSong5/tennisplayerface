@@ -127,9 +127,9 @@
 				<div class="addthis_inline_share_toolbox"></div>
 
 				<div class="image-title-wrap">
-					<!-- <button type="button" onclick="removeUpload()" class="remove-image">
+					<button type="button" onclick="removeUpload()" class="remove-image">
 						Remove <span class="image-title">Uploaded Image</span>
-					</button> -->
+					</button>
 				</div>
 			</div>
 		</div>
@@ -298,7 +298,7 @@
 				$('.result-message').html(resultMessage);
 				for (let i = 0; i < maxPredictions; i++) {
 					const classPrediction =
-						prediction[i].className + ': ' + prediction[i].probability.toFixed(2)*100+"%";
+						prediction[i].className + ': ' + prediction[i].probability.toFixed(0)*100+"%";
 					labelContainer.childNodes[i].innerHTML = classPrediction;
 				}
 			}
